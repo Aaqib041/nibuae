@@ -1,0 +1,313 @@
+<nav class="navbar  navbar-default navbar-fixed-top">
+  <div class="container">
+    <i class="fa fa-bars fa-2x " data-toggle="collapse" data-target="#menu-content" style="float: right;"></i>
+    <div class="navbar-header">
+      <!--   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <!-- <div class="col-md-3 col-sm-3 col-xs-3"> -->
+      <a href="" class="navbar-brand">
+     <span><img  src="../assets/images/logo.png" class="img-circle img-desktop" alt="Nobel"  style="margin-top: 13px;cursor: pointer;"><a href=""></a></span> 
+      <span><img src="../assets/images/logo_mobile.png" class="img-circle img-mobile" alt="Nobel"  style="cursor: pointer;"></span> 
+      </a>
+      <!-- </div> -->
+      <b class="company-name">{{'company_name' | translate}}</b>
+      <p class="license">IA Licensed Broker No 182 & IA Licensed Consultant No. 61</p>
+    </div>
+   <!--  <div class="translate" (click)="switchLanguage('ar')"> &nbsp; عربى</div><span class="translate" (click)="switchLanguage('en')"> English &nbsp;|</span> -->
+  <!--  <div class="translate" id="google_translate_element" style="background-image:none !important;"></div> -->
+    <div class="nav-side-menu">
+      <!-- <div class="brand">B</div> -->
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+          <li class=""><a href=""><i class="fa fa-home"></i>{{'home' | translate}}</a></li>
+          <li data-toggle="collapse" data-target="#about" class="collapsed">
+            <a routerLink="about"><i class=""></i> About <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="about">
+            <li><a routerLink="about">About Us</a></li>
+            <!-- <li><a>{{'our_culture' | translate}}</a></li> -->
+            <li><a routerLink="about">Why us</a></li>
+            <li><a routerLink="about">Service & Solutions</a></li>
+          </ul>
+          <!--         product          -->
+          <li data-toggle="collapse" data-target="#service" class="collapsed">
+            <a routerLink="product"><i class="" ></i> {{'products' | translate}} <span class="arrow"></span></a>
+          </li>
+       
+          <!--         careers          -->
+          <li data-toggle="collapse" data-target="#careers" class="collapsed">
+            <a routerLink="careers"><i class=""></i> {{'careers' | translate}} <span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse" id="careers">
+            <li><a routerLink="careers">{{'working_with_us' | translate}}</a></li>
+            <!-- <li><a>{{'our_culture' | translate}}</a></li> -->
+            <li><a routerLink="careers">{{'current_openings' | translate}}</a></li>
+            <li><a routerLink="careers">{{'upload_resume' | translate}}</a></li>
+          </ul>
+          <li data-toggle="collapse">
+            <a href="#"><i class=""></i>{{'customer_service' | translate}}<span></span></a>
+          </li>
+          <li  data-toggle="collapse">
+            <a aria-hidden="true" data-toggle="modal" data-target="#enquiryModal" (click)="resetForm()"><i class=""></i>{{'get_quotes' | translate}}<span></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- nav-side-menu ending -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav  nav-position">
+        <!--  <li><a data-toggle="collapse"></a></li> -->
+        <!-- <li><a data-toggle="collapse"></a></li> -->
+        <li class="" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a href="" >{{'home' | translate}}</a></li>
+        <li routerLink="/about" routerLinkActive="active" style="cursor: pointer;outline-style:none;box-shadow:none;border-color:transparent;" class="dropdown" data-toggle="dropdown"><a class="dropdown-toggle"  aria-haspopup="true" data-target="#in" aria-expanded="false">{{'about' | translate}}</a>
+         <div class="dropdown-content" id="in">
+         <div class="row padding-about">
+              <li><a routerLink="/about" style="margin-left: 10px">About  us</a></li>
+              <!-- <li><a style="font-size: 10px;">{{'our_culture' | translate}}</a></li> -->
+              <li><a (click)="whyUs()" style="margin-left: 10px">Why  us</a></li>
+              <li><a (click)="serviceSolution()" style="margin-left: 10px">Services Solutions</a></li>
+            </div>
+          </div>
+        </li>
+
+            
+        <li style="outline-style:none;box-shadow:none;border-color:transparent;cursor: pointer;" routerLink="/product" routerLinkActive="active" class="dropdown " data-toggle="dropdown"><a class="dropdown-toggle" aria-haspopup="true" data-target="#in" aria-expanded="false">{{'products' | translate}}</a>
+        </li>
+        <li routerLink="/careers" routerLinkActive="active" style="cursor: pointer;outline-style:none;box-shadow:none;
+border-color:transparent;" class="dropdown " data-toggle="dropdown"><a class="dropdown-toggle" aria-haspopup="true" data-target="#in" aria-expanded="false">{{'careers' | translate}}</a>
+          <div class="dropdown-content" id="in">
+            <div class="row padding-careers">
+              <li><a routerLink="careers">{{'working_with_us' | translate}}</a></li>
+              <!-- <li><a style="font-size: 10px;">{{'our_culture' | translate}}</a></li> -->
+              <li><a (click)="currenOpenings()">{{'current_openings' | translate}}</a></li>
+              <li (click)="routeToResumeUpload()"><a routerLink="careers">{{'upload_resume' | translate}}</a></li>
+            </div>
+          </div>
+        </li>
+        <li routerLink="/contact" routerLinkActive="active" style="cursor: pointer;" class="dropdown " data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-target="#in" aria-expanded="false"><a>{{'customer_service' | translate}}</a></li>
+        <!--   <li><a routerLink="/underDevelop">{{'queries' | translate}}</a></li>
+        <li><a routerLink="/contact">{{'contacts' | translate}}</a></li> -->
+        <li ><a aria-hidden="true" data-toggle="modal" data-target="#enquiryModal" style="color:#2e3192;cursor: pointer; "><b>{{'get_quotes' | translate}}</b></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <div id="enquiryModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" #closeBtn>&times;</button>
+        <h4 class="modal-title">Enquiry Form</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
+          </p>
+          <form [formGroup]='enquiryForm.getForm()' >
+            <div class="col-md-3 col-sm-4 col-xs-6 form-line">
+               <div class="form-group radio-button-section">
+                <p style="margin: auto;font-weight: bold">
+                  <label class="radio-inline">
+                    <input type="radio" class="form-control" name="optradio" value="corporate" formControlName='optradio' (click)="corporate()">Corporate
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" class="form-control" name="optradio" value="individual" formControlName='optradio' (click)="individual()">Individual
+                  </label>
+                </p>
+              </div>
+              <div class="form-group" *ngIf="addCorporateName">
+                <label>Corporate Name</label>
+                <input type="text" class="form-control"  formControlName='corporateName'>
+              </div>
+              
+              <div class="form-group">
+                <label>Information*</label>
+                <input type="text" class="form-control" id="" placeholder="" formControlName='information'>
+                  <div *ngIf="enquiryForm.hasError('information')">
+                    <small class="text-danger">{{careerForm.getError('information')}}</small>
+                    </div>
+              </div> 
+              <div class="form-group">
+                <label>Enquiry*</label>
+                <input type="text" class="form-control" id="exampleInputEmail" formControlName='enquiry'>
+              </div>
+              <div class="form-group">
+                <label>Any Question</label>
+                <input type="text" class="form-control" id="anyQuestion" placeholder="" formControlName='anyQuestion'>
+                
+
+              </div>
+              <div class="form-group">
+                <label>Comments</label>
+                <input type="text" class="form-control" placeholder="" formControlName='comments'>
+              </div>
+              <div class="form-group">
+                <label>Suggestion</label>
+                <textarea class="form-control" id="description" rows="4" cols="28" placeholder="Enter Your Message" formControlName='suggestion'></textarea>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label >Country</label>
+                <input type="text" class="form-control" placeholder=" " formControlName="country" >
+              </div>
+              <div class="form-group">
+                <label >Telephone*</label>
+                <input type="text" class="form-control"  placeholder="" formControlName='mobile' required>
+                   <div *ngIf="enquiryForm.hasError('mobile')">
+                    <small class="text-danger">{{enquiryForm.getError('mobile')}}</small>
+                    </div>
+              </div>
+              <div class="form-group">
+                <label >Fax</label>
+                <input type="text" class="form-control" id="telephone" placeholder="" formControlName='fax'>
+              </div>
+              <div class="form-group">
+                <label >Email*</label>
+                <input type="email" class="form-control" formControlName='email' placeholder="example@abc.com">
+                  <div *ngIf="enquiryForm.hasError('email')">
+                    <small class="text-danger">{{enquiryForm.getError('email')}}</small>
+                    </div>
+              </div>
+              <div class="form-group">
+                <label >City</label>
+                <input type="text" class="form-control" placeholder="" formControlName='city'>
+              </div>
+              <div>
+              </div>
+   <div class="form-group">
+   <re-captcha class="g-recaptcha" formControlName='captcha' (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"  ></re-captcha>
+    <div *ngIf="enquiryForm.hasError('email')">
+                    <small class="text-danger">{{enquiryForm.getError('captcha')}}</small>
+                    </div>
+   <br>
+    </div>
+              <button type="submit" class="btn btn-warning" (click)='send()'>Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
+              <button type="submit" class="btn btn-warning" (click)='reset()'>Cancel <span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div id="enquiryModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" #closeBtn>&times;</button>
+        <h4 class="modal-title">Enquiry Form</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();' novalidate>
+            <div class="col-md-3 col-sm-4 col-xs-6 form-line">
+              <div class="form-group radio-button-section">
+                <p style="margin: auto;font-weight: bold">
+                  <label class="radio-inline">
+                    <input type="radio" class="form-control"  value="corporate" formControlName='optradio' (click)="corporate()">Corporate
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" class="form-control"  value="individual" formControlName='optradio' (click)="individual()">Individual
+                  </label>
+                </p>
+              </div>
+              <div class="form-group" *ngIf="addCorporateName">
+                <label>Corporate Name</label>
+                <input type="text" class="form-control" id="" placeholder="" formControlName='corporateName'>
+              </div>
+              
+              <div class="form-group">
+                <label>Information*</label>
+                <input type="text" class="form-control" id="" placeholder="" formControlName='information'>
+                  <div *ngIf="information?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Information is required.</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Enquiry*</label>
+                <input type="text" class="form-control" id="exampleInputEmail" formControlName='enquiry'>
+                <div *ngIf="enquiry?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please add your enquiry </small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Any Question</label>
+                <input type="text" class="form-control"  formControlName='anyQuestion'>
+              </div>
+              <div class="form-group">
+                <label>Comments</label>
+                <input type="text" class="form-control"   formControlName='comments'>
+              </div>
+              <div class="form-group">
+                <label>Suggestion</label>
+                <textarea class="form-control" id="description" rows="4" cols="28" placeholder="Enter Your Message"></textarea>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label for="description">Country</label>
+                <input type="text" class="form-control"  formControlName='country'>
+              </div>
+              <div class="form-group">
+                <label for="description">Telephone*</label>
+                <input type="text" class="form-control"  formControlName='mobile'>
+                <div *ngIf="mobile?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Mobile No is required.</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">Fax</label>
+                <input type="text" class="form-control"  formControlName='fax'>
+              </div>
+              <div class="form-group">
+                <label for="description">Email*</label>
+                <input type="email" name="email" class="form-control" formControlName='email' placeholder="example@abc.com">
+                <div *ngIf="email?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Email is required.</small>
+                </div>
+                <div *ngIf="email?.errors?.pattern && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+                  Please enter valid email.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">City</label>
+                <input type="text" class="form-control" placeholder="" formControlName='city'>
+              </div>
+              <div>
+              </div>
+
+              <!--  <div class="row">
+   <div class="col-md-3"> -->
+   <!-- <div class="form-group"> -->
+   <re-captcha class="g-recaptcha" formControlName='captcha' (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"  ></re-captcha>
+    <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please select Captcha</small>
+                </div>
+   <br>
+    <!-- </div> -->
+              <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
+              <button type="submit" class="btn btn-warning" (click)='reset()'>Cancel <span class="glyphicon glyphicon-remove"></span></button>
+              <!--  </div>
+                </div> -->
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>

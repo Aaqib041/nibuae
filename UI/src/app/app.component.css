@@ -1,0 +1,101 @@
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+  margin-right: 5px;
+}
+.text-danger {
+  font-size: 12px;
+}
+
+.panel-body {
+  overflow-y: scroll;
+  height: 385px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+.panel {
+  position: fixed;
+  bottom: 0px;
+  background-color: #262679;
+  right: 0px;
+  width: 26%;
+  margin-bottom: 0px;
+  text-align: center;
+  z-index: 999;
+  border: 1px solid #fff;
+}
+
+.panel-heading {
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.form-control {
+  height: 25px;
+}
+
+.btn-mod {
+ /* float: right;*/
+  border-radius: 15px;
+  color: #fff;
+  width: 100px;
+  border: none;
+  background: #262679;
+}
+
+@media (max-width: 768px) {
+  .panel {
+    width: 78%;
+    z-index: 1030;
+  }
+}
+.btn-group a {
+	color: #fff;
+}
+
+textarea {  
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box; 
+width: 100%;}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 9px;
+    top: 7px;
+    font-weight: bold;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.9em;
+}
+
+a[aria-expanded="false"]::before {
+    content: '\e260';
+}
+@media screen and (max-height: 575px){ 
+  #rc-imageselect, .g-recaptcha {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+    } 
+  }
+
+  .rc-anchor-normal {
+    height: 74px;
+    width: 250px !important;
+  }

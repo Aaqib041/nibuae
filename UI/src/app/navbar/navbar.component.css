@@ -1,0 +1,699 @@
+.nav-position {
+  position: relative;
+ /* top: 37px;
+  left: 125px;
+  font-size: 13px;*/
+    top: 43px;
+    left: 95px;
+    font-size: 14px;
+}
+
+/*.goog-logo-link {
+   display:none !important;
+} 
+.goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-link:hover, .goog-logo-link:active {
+    color: #444;
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.goog-te-gadget-simple img {
+  display: none !important;
+}
+
+.goog-te-gadget img {
+  display: none !important;
+}*/
+.img-mobile {
+  display: none;
+}
+
+.license {
+  /*display: inline-block;*/
+  position: relative;
+  top: 35px;
+  font-size: 11px;
+  /*right: 344px;*/
+}
+/*div#google_translate_element div.goog-te-gadget-simple {
+        font-size: 19px;
+    }*/
+/*.modal-content {
+    width: 50% !important;
+    margin-top: 20% !important;
+    background-color: #F1F2F4 !important;
+  }*/
+
+
+/*.navbar-header {
+  margin-left: -15px;
+}*/.navbar-default .navbar-nav>li>a {
+  outline: 0 !important;
+  line-height: 0px ;
+}
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+  outline: 0 !important;
+  border-bottom: 3px solid #f0ad4e;
+  color: #f0ad4e;
+}
+.navbar-default .navbar-nav>.active>a {
+  outline: 0 !important;
+  border-bottom: 3px solid #f0ad4e;
+  background-color: #fff !important;
+  color: #f0ad4e;
+}
+/*.navbar-default .navbar-nav>li>a.active {
+  outline: 0 !important;
+  border-bottom: 3px solid red;
+  color: red;
+}*/
+/*.active {
+  outline: 0 !important;
+  border-bottom: 3px solid red;
+  color: red;
+}*/
+.nav-tabs a,
+.nav-tabs a:hover,
+.nav-tabs a:focus {
+  outline: 0 !important;
+}
+
+ :-moz-any-link:focus {
+  outline: none;
+}
+
+.container>.navbar-header {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.company-name {
+  font-size: 19px;
+  position: relative;
+  top: 35px;
+}
+
+.float-right {
+  float: right;
+}
+
+.translate {
+  float: right;
+  font-size: 13px;
+  cursor: pointer;
+  bottom: 65px;
+}
+
+.img-circle {
+  width: 90px;
+}
+
+
+
+
+
+/*#myNavbar .nav {
+    position: absolute; 
+    bottom: 0; 
+    right: 0;
+    margin-bottom: -10px;
+}*/
+
+.navbar-default {
+  background-color: #fff;
+  height: 80px;
+}
+
+#navstamp::before {
+  display: block;
+  content: ""; // add the content you need here
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #275337;
+}
+
+nav {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.dropdown-content:before {
+  position: absolute;
+  top: -7px;
+  /*right: 29px;*/
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid grey;
+  border-left: 7px solid transparent;
+  /*border-bottom-color: yellow;*/
+  content: '';
+}
+
+.dropdown-content:after {
+  /* position: absolute;
+    top: -6px;*/
+  /*right: 30px;*/
+  /*display: inline-block;*/
+  border-right: 6px solid transparent;
+  /*border-bottom: 6px solid green;*/
+  border-left: 6px solid transparent;
+  content: '';
+  padding-right: 100px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 0px;
+  text-decoration: none;
+  display: block;
+  clear: both;
+  font-weight: bold;
+  /*float: left;*/
+  font-size: 13px;
+  text-align: justify;
+}
+/*.padding-about a {
+  font-size: 11px;
+  font-weight: bold;
+}*/
+
+.dropdown-content li {}
+
+.dropdown-content a:hover {
+  background-color: ;
+  color: blue;
+}
+
+.dropdown:hover .dropdown-content {
+  display: inline-block;
+  left: 50% !important;
+  top: 37px;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
+
+.hamburger .ng-tns-c3-0 .hamburger--collapse {
+  display: none !important;
+}
+
+
+
+
+
+
+/*.dropdown .open{
+  background-color: none;
+}*/
+
+.product-dropdown {
+  min-width: 730px;
+}
+
+.padding-0 {
+  padding-right: 0;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.padding-careers {
+  padding-right: 0px;
+  padding-left: 50px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.padding-about {
+  padding-right: 0px;
+  padding-left: 50px;
+  cursor: pointer;
+  width: 200px;
+}
+
+
+
+
+/*stat*/
+
+.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #262679;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+  color: #e1ffff;
+  display: none;
+}
+
+.nav-side-menu .brand {
+  background-color: #fff;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #262679;
+}
+
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #262679;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #4c3a90;
+}
+
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.nav-side-menu li {
+  padding-left: 0px;
+  /*border-left: 3px solid #2e353d;*/
+  /*border-bottom: 1px solid #23282e;*/
+}
+
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #262679;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.fa-bars {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .fa-bars {
+    display: initial;
+    position: relative;
+    top: 35px;
+    color: #262679;
+  }
+  .btn-warning {
+    display: block;
+  }
+  .navbar-right {
+    display: none;
+  }
+  /*.company-name {
+  display: none;
+}*/
+  .nav-side-menu {
+    position: relative;
+    width: 50%;
+    top: 25px;
+    margin-bottom: 10px;
+    float: right;
+    display: block !important;
+    left: 78px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #fff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+
+  .navbar-default {
+    font-size: 14px;
+  }
+  .img-desktop {
+    display: none;
+  }
+  .img-mobile {
+    display: block;
+  }
+  .navbar-collapse {
+    background-color: #fff;
+    /*width: -webkit-fill-available;*/
+    /*display: -webkit-box;*/
+    border-bottom: 1px solid;
+  }
+  .nav-position {
+    top: -5px;
+    right: 160px;
+  }
+  strong {
+    font-size: 10px;
+  }
+  .company-name {
+    font-size: 10px;
+    position: relative;
+    top: 42px;
+    left: -35px;
+  }
+  .float-right {
+    float: none;
+  }
+  .translate {
+    position: relative;
+    font-size: 10px;
+    bottom: 95px;
+  }
+  .license {
+    position: relative;
+    font-size: 8px;
+    text-align: center;
+    top: 42px;
+    left: -50px;
+    display: block;
+  }
+  .img-circle {
+    margin-top: 0px !important;
+    position: relative;
+    top: 13px;
+    left: -15px
+  }
+  .main-menu {
+    display: inline-block;
+  }
+  .menu-container .show-menu {
+    top: 76px !important;
+    background-color: #262679;
+  }
+}
+
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+
+
+
+
+/*end*/
+
+
+/*form styles*/
+
+.content-header {
+  font-family: 'Oleo Script', cursive;
+  color: #fcc500;
+  font-size: 45px;
+}
+
+.section-content {
+  text-align: center;
+}
+
+#contact {
+
+  font-family: 'Teko', sans-serif;
+  padding-top: 60px;
+  width: 100%;
+  width: 100vw;
+  height: 550px;
+  background: #3a6186;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3a6186, #89253e);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186, #89253e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+.contact-section {
+  padding-top: 40px;
+}
+
+.contact-section .col-md-6 {
+  width: 50%;
+}
+
+.form-line {
+  border-right: 2px solid #e0e2e6;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+label {
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: normal;
+  color: #9797bb;
+}
+
+.form-control {
+  font-size: 1.1em;
+  color: #080808;
+}
+
+textarea.form-control {
+  height: 135px;
+  /* margin-top: px;*/
+}
+
+input[type=radio] {
+  border: 0px;
+  width: 21%;
+  height: 1.3em;
+  bottom: -3px;
+}
+
+input[type=file]  {
+  position: relative !important;
+    left: 70px !important;
+    top: -38px !important;
+}
+
+.submit {
+  font-size: 1.1em;
+  float: right;
+  width: 150px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.radio-button-section {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #cccde8;
+  border-radius: 15px;
+}
+/*
+.home a:hover {
+    border-bottom: 3px solid red;
+}
+.about a:hover {
+    border-bottom: 3px solid red;
+}
+.home a.active {
+    border-bottom: 3px solid red;
+}
+.about a.active {
+    border-bottom: 3px solid red;
+}*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .nav-position {
+    top: -75px;
+    left: 0px;
+  }
+  .navbar-default {
+    height: 88px;
+  }
+  .license {
+    display: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 92px;
+  }
+  .dropdown:hover .dropdown-content {
+    top: 54px;
+  }
+  /* STYLES GO HERE */
+}
+
+@media (max-width: 320px) {
+  .license {
+    font-size: 6px;
+    left: -35px;
+  }
+  .company-name {
+    font-size: 9px;
+  }
+}
+@media (min-width: 768px){
+.modal-dialog {
+    width: 645px;
+
+  }
+}
+
+
+@media only screen and (max-width: 640px) and (min-width: 360px) {
+
+  .license {
+    /* font-size: 8px; */
+    top: 29px !important;
+    font-size: 9px !important;
+    /* top: 42px; changed here*/
+  }
+   .company-name {
+    top: 30px !important;
+    /*changed here top: 42px; */
+  }
+    .nav-side-menu {
+    width: 65% !important;
+    padding: inherit !important;
+    /*  changed here width 50% */
+  }
+
+}
+/*.............iphone 5 SE..................*/
+@media only screen and (max-width: 568px) and (min-width: 320px) { 
+  .license {
+    /* font-size: 8px; */
+    top: 28px !important;
+    font-size: 9px !important;
+    /* top: 42px; changed here*/
+  }
+  .company-name {
+    top: 27px !important;
+    font-size: 9px !important;
+    /*changed here top: 42px; */
+  }
+  .nav-side-menu {
+    width: 65% !important;
+    padding: inherit !important;
+    /*  changed here width 50% */
+  }
+}
+/*.............iphone 6 7 8 ..................*/
+@media only screen and (max-width: 667px) and (min-width: 375px) { 
+  .license {
+    /* font-size: 8px; */
+    top: 28px !important;
+    font-size: 9px !important;
+    /* top: 42px; changed here*/
+  }
+  .company-name {
+    top: 27px !important;
+    font-size: 9px !important;
+    /*changed here top: 42px; */
+  }
+  .nav-side-menu {
+    width: 65% !important;
+    padding: inherit !important;
+    /*  changed here width 50% */
+  }
+}
+.goog-te-banner-frame.skiptranslate {display: none !important;} 
+body { top: 0px !important; }
+
+
+
+
+

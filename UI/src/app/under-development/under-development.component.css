@@ -1,0 +1,40 @@
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+.status-reason {
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  padding: 0.5em 0;
+  background-color: gray;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
+  background-clip: text;
+  padding-bottom: 12px;
+  padding-top: 0px;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.status-reason .fa {
+  font-size: 50px;
+  background-color: rgb(28, 54, 76);
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.developBlog {
+  position: relative;
+  background-color: #fff;
+  top: 100px;
+}

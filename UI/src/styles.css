@@ -1,0 +1,21 @@
+.border {
+  width: 50%;
+  height: 1px;
+  border-radius: 10px;
+  background: linear-gradient( to right, #a17cdc 0%, #e2cfef 100%);
+}
+.modal-title {
+	color: #0e108b;
+  text-align: center;
+}
+ .toast-top-center {
+top: 150px !important; 
+}
+
+ .success-circle {
+ height: 50px;
+width: 50px;
+border: 2px solid green;
+border-radius: 50px;
+text-align: center;
+}

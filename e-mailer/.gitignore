@@ -1,0 +1,8 @@
+.gradle/
+.idea/
+e-mailer.iml
+gradle/
+gradlew
+gradlew.bat
+out/
+build/

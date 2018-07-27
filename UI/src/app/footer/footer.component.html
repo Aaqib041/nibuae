@@ -1,0 +1,231 @@
+<footer class="app-footer footer">
+  <div class="container footer-div">
+    <div class="row links">
+      <div class="col-md-3">
+        <h5 class="footer-header-fonts ">Company</h5>
+       <div style="height: 2px;background: linear-gradient( to right, #8f37d2 20%, #8091d0 80%);border-radius: 10px;width: 50%"></div>
+       <br>
+        <!-- <hr class="underline-footer"> -->
+        <!-- <br> -->
+        <a routerLink="/about" routerLinkActive="active-link" class="footer-sub-heading-fonts"  (click)="aboutFooter()">
+              {{'foot_about_us'| translate }}
+                </a>
+        <br/>
+        <a  routerLink="/product" routerLinkActive="active-link" class="footer-sub-heading-fonts" (click)="productFooter()">
+          Our Products
+        </a>
+        <br/>
+        <a routerLinkActive="active-link" class="footer-sub-heading-fonts" (click)="careerFooter()">
+          Careers
+        </a>
+        <br/>
+      
+       <!--  <a routerLink="/careers">  {{'foot_careers'| translate }}</a>
+        <br/>
+        <a  aria-hidden="true" data-toggle="modal" data-target="#enquiryModal">  {{'foot_get_quotes'| translate }}</a>
+        <br> -->
+      <!--   <a  routerLink="/contact">  {{'foot_contacts'| translate }}</a>
+         <br> -->
+        <a style="cursor: pointer;" aria-hidden="true" data-toggle="modal" data-target="#disclaimerModal"> Disclaimer </a>
+      
+      </div>
+       <div class="col-md-3">
+        <h5 class="footer-header-fonts ">Support</h5>
+       <div style="height: 2px;background: linear-gradient( to right, #8f37d2 20%, #8091d0 80%);border-radius: 10px;width: 50%"></div>
+       <br>
+        <!-- <hr class="underline-footer"> -->
+        <!-- <br> -->
+        <a  routerLink="/contact" class="footer-sub-heading-fonts" (click)="contactFooter()">
+           {{'foot_queries'| translate }}
+        </a>
+        <br/>
+          <a  routerLink="/contact" routerLinkActive="active-link">  Contact us</a>
+         <br>
+        <a  aria-hidden="true" data-toggle="modal" data-target="#enquiryModal">  {{'foot_get_quotes'| translate }}</a>
+        <br>
+       </div>
+      <div class="col-md-3">
+        <h5 class="footer-header-fonts">{{'get_in_touch' | translate}}</h5>
+         <div style="height: 2px;background: linear-gradient( to right, #8f37d2 20%, #8091d0 80%);border-radius: 10px;width: 50%"></div>
+        <br>
+       <!--  <i class="fa fa-map-marker fa-2x" aria-hidden="true" style="font-size: 15px;">&nbsp; {{'head_office'| translate }}</i>-->
+        <!-- <div style="border-top: 1px solid;width: 50%"></div> -->
+        {{'address_line1' |translate}}
+        <br/> {{'address_line2' |translate}}
+        <br/> {{'address_line3' |translate}}
+        <br/> {{'address_line4' |translate}}
+        <br/>
+        <i class="fa fa-phone  " aria-hidden="true" style="font-size: 15px;">&nbsp; {{'telephone' | translate}} {{footerLabels?.telephone_no}}</i>
+        <br>
+        <i class="fa fa-fax  " aria-hidden="true" style="font-size: 15px;">&nbsp; {{'fax' | translate}}  {{footerLabels?.fax_no}}</i>
+        <br>
+        <i class="fa fa-envelope  " aria-hidden="true" style="font-size: 15px;">&nbsp; {{'email' | translate}}{{footerLabels?.email_add}}</i>
+        <br>
+      
+      
+     
+    </div>
+     <div class="col-md-3 section-third pull-right">
+     <img  src="../assets/images/logo.png" class="img-circle" width="100px" style="cursor: pointer;">
+     <div class="social" style="text-align: center;">
+         <a  title="" target="_blank" href="#"> <i class="fa fa-linkedin"></i></a>
+          <a title="" target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+          <a  title="" target="_blank" href="#"> <i class="fa fa-twitter"></i></a>
+        </div>
+        </div>
+
+        </div>
+        <br>
+          <p style="">© Copyright 2016, Noble Insurance Broker Co.(L.L.C) All Rights Reserved.&nbsp;&nbsp;  Terms &nbsp; | &nbsp; Privacy</p>
+   <!--  <button (click)="chatPopup()" class="btn-static" style="border-radius: 50%; background-color: #DB0A5B;float: right;border: 0;" data-toggle="modal" data-target="#myModal"><i class="fa fa-comments fa-4x" aria-hidden="true" style="color: #fff;"></i></button>
+    <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+<div id="disclaimerModal" class="modal fade" role="dialog">
+  <div class="modal-dialog ">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Enquiry Form</h4>
+      </div>
+      <div class="modal-body">
+        <h2 style="color:#2e3192; text-align: center;"><b>
+        Disclaimer</b></h2>
+        <p style="color:black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur”. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+</p>
+ <p style="color:black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur”. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+</p>
+ <p style="color:black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur”. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+</p>
+        </div>
+      <div class="modal-footer">
+        <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+  </div>
+  <div id="enquiryModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Enquiry Form</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
+            Form submitted successfully.
+          </p>
+          <form [formGroup]='enquiryForm' (ngSubmit)='send()' novalidate>
+            <div class="col-md-3 col-sm-4 col-xs-6 form-line">
+              <div class="form-group radio-button-section">
+                <p style="margin: auto;font-weight: bold">
+                  <label class="radio-inline">
+                    <input type="radio">Corporate
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio">Individual
+                  </label>
+                </p>
+              </div>
+              <div class="form-group">
+                <label>Information</label>
+                <input type="text" class="form-control" id="" placeholder="">
+              </div>
+              <div class="form-group">
+                <label>Enquiry</label>
+                <input type="text" class="form-control" id="exampleInputEmail" formControlName='enquiry'>
+               <!--  <div *ngIf="enquiry?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <p class="text-danger">Please add your enquiry</p>
+                </div> -->
+              </div>
+              <div class="form-group">
+                <label>Any Question</label>
+                <input type="text" class="form-control" id="telephone" placeholder="">
+              </div>
+              <div class="form-group">
+                <label>Comments</label>
+                <input type="text" class="form-control" id="telephone" placeholder="">
+              </div>
+              <div class="form-group">
+                <label>Suggestion</label>
+                <textarea class="form-control" id="description" rows="4" cols="28" placeholder="Enter Your Message"></textarea>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label for="description">Country</label>
+                <input type="text" class="form-control" placeholder=" ">
+              </div>
+              <div class="form-group">
+                <label for="description">Telephone</label>
+                <input type="text" class="form-control" id="telephone" placeholder="" formControlName='mobile'>
+                <div *ngIf="mobile?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <p class="text-danger">Mobile No is required.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">Fax</label>
+                <input type="text" class="form-control" id="telephone" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="description">Email</label>
+                <input type="email" name="email" class="form-control" formControlName='email' placeholder="example@abc.com">
+                <div *ngIf="email?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <p class="text-danger">Email is required.</p>
+                </div>
+                <!--  <div *ngIf="email?.errors?.minlength && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+                  Email must be at least 5 characters long.
+                </div> -->
+                <div *ngIf="email?.errors?.pattern && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+                  Please enter valid email.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">City</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div>
+              </div>
+              <!--  <div class="row">
+   <div class="col-md-3"> -->
+              <button type="submit" class="btn btn-warning" (click)="send()">Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
+              <button type="submit" class="btn btn-warning" (click)='reset()'>Cancel <span class="glyphicon glyphicon-remove"></span></button>
+              <!--  </div>
+                </div> -->
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+</footer>

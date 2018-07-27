@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<ng4-loading-spinner> </ng4-loading-spinner>
+<router-outlet >
+</router-outlet>
+<div class="container">
+  <div class="row">
+    <!--  <div class="col-md-8"></div> -->
+    <div class="panel" (click)="check()">
+      <div class="panel-heading" data-toggle="collapse" href="#collapseOne" id="accordion" aria-expanded="false" style="cursor: pointer;">
+        <i class="fa fa-envelope" style="float: left;margin-top: 7px;"></i>&nbsp;&nbsp;<span class=""></span>{{'quick_quote' | translate}}
+        <div class="btn-group pull-right">
+          <a type="button" class=" btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-chevron-up" id="up-arrow"></span>
+                            <!-- <span class="glyphicon glyphicon-chevron-down" id="down-arrow"></span> -->
+                        </a>
+        </div>
+      </div>
+      <div class="panel-collapse collapse" id="collapseOne">
+        <div class="panel-body" style="background-color: #fff">
+          <p *ngIf="isValidFormSubmitted && quickQuote?.pristine" [ngClass]="'success'">
+            <!-- Form submitted successfully. -->
+          </p>
+
+          <form action="" [formGroup]='quickQuote' (ngSubmit)='sendEmail()' novalidate>
+            
+            <div>
+              <h6 style="float: left;">{{'name' | translate}} :</h6>
+              <input type="text" class="form-control" name="name" formControlName='name' required>
+             <div *ngIf="name?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+          Name is required.
+          </div>
+          <div *ngIf="name?.errors?.minlength && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger" style="font-size: 12px;">
+                 Name must be at least 2 characters long.
+          </div>
+         
+         <div *ngIf="name?.errors?.maxlength && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger" style="font-size: 12px;">
+                 Name must be at least 30 characters long.
+          </div>
+        </div>
+            <div>
+              <h6 style="float: left;">{{'email' | translate}} :</h6>
+              <input type="email" class="form-control" name="email" formControlName='email'>
+               <div *ngIf="email?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger" style="font-size: 12px;">
+                  Email is required.
+                </div>
+                  <div *ngIf="email?.errors?.pattern && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger" style="font-size: 12px;">
+                  Please enter valid email.
+                </div>
+            </div>
+            <div>
+              <h6 style="float: left;">{{'mobile' | translate}} :</h6>
+              <input type="text" class="form-control" name="mobile" formControlName='mobile' required>
+              <div *ngIf="mobile?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                <p class="text-danger" style="font-size: 12px;">Mobile Number is required.</p>
+              </div>
+            </div>
+            <div>
+              <h6 style="float: left;">{{'message' | translate}} :</h6>
+            <!--   <textarea rows="4" cols="28" style="margin-top: 2px;" name="message"></textarea> -->
+            <textarea class=""  rows="4" cols="30"></textarea>
+              
+            </div>
+            <br>
+            <re-captcha class="g-recaptcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx" width="50px" style=" transform:scale(0.40);-webkit-transform:scale(0.40);transform-origin:0 0;-webkit-transform-origin:0 0;"></re-captcha>
+            <!--  <button type="button" class="btn btn-def btn-mod" >send</button> -->
+            <br>
+            <button type="button" class="btn btn-def btn-mod" data-toggle="collapse" href="#collapseOne" 
+            [disabled]="!quickQuote.valid" (click)="sendEmail()" data->send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

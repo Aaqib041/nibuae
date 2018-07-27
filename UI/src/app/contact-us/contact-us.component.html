@@ -1,0 +1,235 @@
+<div class="container custumer-care">
+  <h2 style="text-align: center;font-weight: bold;padding-top:50px;">Customer Care</h2>
+</div>
+<br>
+<div class="col-md-12 complaint-grievance-header" style="padding-top: 20px;padding-bottom: 20px">
+  <b style="margin: auto;font-weight: bold;font-size: 30px;color:#2e3192;">Complaints & Grievances</b>
+</div>
+<hr class="border-complaint">
+<!-- Material form login -->
+<div class="container">
+ <p *ngIf="isValidFormSubmitted && customerServiceForm.pristine" [ngClass]="'success'">
+            Form submitted successfully.
+          </p>
+  <form [formGroup]='customerServiceForm' (ngSubmit)='sendCustomerServiceForm()' novalidate style="padding-bottom: 10px;padding-top: 30px;">
+    <div class=" col-lg-1 col-md-1"></div>
+    <div class=" col-lg-4 col-md-4" id="panel">
+    <div class="form-group group">
+
+        <input type="text" class="dropdown-toggle select-btn"  data-toggle="dropdown" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <b style="position: absolute;top:0;color: #aaaad6;" >Complaints  </b>
+
+      <ul class="dropdown-menu ">
+        <li><a>Member</a></li>
+        <li><a>HR</a></li>
+        <li><a>Other</a></li>
+      </ul>
+
+      </div>
+     <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Name of Complaints</label>
+      </div>
+      <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Name of Company</label>
+      </div>
+      <div class="form-group group">
+        <input type="email" name="email"  formControlName='email' required>
+         <div *ngIf="email?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <p class="text-danger">Email is required.</p>
+                </div>
+                  <div *ngIf="email?.errors?.pattern && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+                  Please enter valid email.
+                </div>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Email*</label>
+      </div>
+      <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Emirate ID</label>
+      </div>
+      <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Mobile</label>
+      </div>
+    <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Date of Complaint</label>
+      </div>
+    <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Name of Patient</label>
+      </div>
+     <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Name of Complaint</label>
+      </div>
+    </div>
+    <div class="col-md-1  border-right" style="height: 600px;"> </div>
+    <div class="col-md-1"> </div>
+    <div class=" col-lg-4 col-md-4">
+     <div class="form-group group">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Policy Details : </label>
+      </div>
+      <br>
+      <br>
+     <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Member ID/ Employee ID</label>
+        </div>
+         <!-- <div class=" col-lg-2 col-md-2"> -->
+        <div class="form-group group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label style="left:10px;">Policy Number</label>
+      </div>
+        <div class="form-group group">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Name of the Insurance Company</label>
+        </div>
+         <div class="form-group group">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Member Card No</label>
+        </div>
+      <div class="form-group group">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>TPA Name</label>
+        </div>
+      <div class="form-group group">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Complaint Category</label>
+        </div>
+      <div class="form-group group">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Grivance Description*</label>
+        </div>
+        <div class="form-group group">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Is this repeat Complaint:</label>
+        </div>
+       <div class="form-group group" style="display: -webkit-inline-box;">
+
+      <input type="radio" name="optradio">Yes &nbsp;
+   <span></span>
+      <input type="radio" name="optradio">No
+ <!-- <re-captcha class="g-recaptcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"  ></re-captcha> -->
+    <br>
+
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4" style="padding-bottom: 20px;
+    padding-top: 20px;">
+    <re-captcha class="g-recaptcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx" width="50px" style=" transform:scale(0.40);-webkit-transform:scale(0.40);transform-origin:0 0;-webkit-transform-origin:0 0;"></re-captcha>
+    <br>
+        <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-warning">Cancel <span class="glyphicon glyphicon-remove"></span></button>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+  </form>
+</div>
+<div class="col-md-12 complaint-grivance-header" style="margin-top: 18px;margin-bottom: 30px;text-align: center;">
+  <b style="margin: auto;font-weight: bold;font-size: 30px;color:#2e3192;">Locate Us</b>
+
+</div>
+<hr class="border-complaint" style="margin-bottom: 50px;">
+<div class="container map">
+  <div class="contact-office">
+    <address>
+     <!--  <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?&amp;q=%0ANoble%20Insurance%20Broker%20Co.%20LLC%20-%20Al%20Nahda%20Road%20-%20Dubai%20-%20United%20Arab%20Emirates%20%20%20&amp;output=embed"></iframe> -->
+ <!--    <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://www.google.com/maps/place/King+Abdulaziz+City+for+Science+and+Technology+(KACST)/@24.7167346,46.641917,17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f1d6e548a39d5:0xb1c24f33b1026317!8m2!3d24.7167346!4d46.644111?hl=en-US&amp;output=embed"></iframe> -->
+ <!-- <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.ae/maps/place/ACE+Arabia+Insurance/@24.6987542,46.7226025,15z/data=!4m5!3m4!1s0x0:0xead8d81bf6bdedf8!8m2!3d24.6987542!4d46.7226025"></iframe> -->
+<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJa-mzR5EDLz4R-O299hvY2Oo&key=AIzaSyCax7W2syp0JLXDv7wgpWJPrIxiU6_p8y8"  allowfullscreen></iframe>
+    </address>
+  </div>
+</div>
+
+<div class="col-md-12 complaint-grivance-header" style="margin-top: 18px;margin-bottom: 20px;text-align: center;">
+ <b style="margin: auto;font-weight: bold;font-size: 30px;color:#2e3192;">Contact Us</b>
+</div>
+<hr class="border-complaint">
+<div class="container" style="padding-top: 50px; padding-bottom: 50px;">
+  <div class="row">
+    <div class="col-md-7" style="font-family: 'Raleway', sans-serif;">
+    <img src="../../assets/images/office.png" width="650px" height="300px">
+   <!--    <h4 style="font-weight: bold;">Sharjah Branch
+      <a href="https://www.google.com/maps/place/Noble+Insurance+Broker+Co.+LLC./@25.359422,55.384164,16z/data=!4m5!3m4!1s0x0:0xf7e74f10a09429be!8m2!3d25.359422!4d55.384164?hl=en-US" target="_blank"><i class="fa fa-map-marker fa-2x"></i></a></h4>
+      <p>CBI Bldg. Suite # 404</p>
+      <p>Bank Street Rolla</p>
+      <p>PO Box # 64755</p>
+      <p>Sharjah - UAE</p>
+      <p>Tel : +971 6 568 86 61</p>
+      <p>Fax : +971 6 568 86 62</p>
+      <p>Email : nibshj@eim.ae</p>
+ -->    </div>
+   <!--  <div class="col-md-1 border-right" style="height: 250px;"></div>
+    <div class="col-md-3 " style="font-family: 'Raleway', sans-serif;text-align: initial;padding-left: 115px;">
+      <h4 style="font-weight: bold;">Head Office<a href="https://www.google.com/maps/place/Noble+Insurance+Broker+Co.+LLC/@25.2727,55.3715,16z/data=!4m5!3m4!1s0x0:0xdc417759c2f6d29f!8m2!3d25.2727!4d55.3715?hl=en-US" target="_blank"><i class="fa fa-map-marker fa-2x"></i></a></h4>
+      <p>Mozna Bldg. Suite # 315 & 124 </p>
+      <p>PO Box # 84694,</p>
+      <p>Al Qusais Dubai- UAE</p>
+      <p>Tel : 00-971-4-263 88 66</p>
+      <p>Fax: 00-971-4-263 88 85</p>
+      <p>Email: nib@eim.ae</p>
+    </div> -->
+     <div class="col-md-1 border-right" style="height: 300px;"></div>
+     <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-3" style="font-family: 'Raleway', sans-serif;;padding-left: 70px;">
+      <h4 style="font-weight: bold;">Head Office
+      <a href="https://www.google.com/maps/place/King+Abdulaziz+City+for+Science+and+Technology+(KACST)/@24.7167346,46.641917,17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f1d6e548a39d5:0xb1c24f33b1026317!8m2!3d24.7167346!4d46.644111?hl=en-US" target="_blank"><i class="fa fa-map-marker fa-2x"></i></a></h4>
+      <!--  <a href="https://www.google.com/maps/place/Noble+Insurance+Broker+Co.+LLC./@25.359422,55.384164,16z/data=!4m5!3m4!1s0x0:0xf7e74f10a09429be!8m2!3d25.359422!4d55.384164?hl=en-US" target="_blank"><i class="fa fa-map-marker fa-2x"></i></a></h4> -->
+      <p> 7716,
+      </p>
+      <p>Makkah Al Mukarramah Rd,</p>
+      <p>King Abdul Aziz
+      </p>
+      <p>Riyadh 12233, Saudi Arabia
+      </p>
+      <p>Tel : +971 6 545 53 50
+      </p>
+      <p>Fax : +971 6 545 53 52</p>
+      <p>Email : nib@eim.ae</p>
+    </div>
+  </div>
+</div>

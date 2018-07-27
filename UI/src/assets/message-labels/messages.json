@@ -1,0 +1,14 @@
+{
+   "invalid_user" : "Please provide correct userid and password",
+   "server_error": "Server is down",
+   "wrong_credentials": "You have entered an invalid user id or password.",
+   "please_enter_credentials": "Please enter your email address and password",
+   "no_alert_report" : "No Alert Report",
+   "no_student_present": "Student record not found for class ",
+   "student_not_found": "Student not found",
+   "data_not_found": "No data found",
+   "alerts_not_found": "No alerts found",
+   "failed_to_get_student_in_alert_zone": "Failed to show students in alert zone",
+   "failed_to_get_student_attendance;": "Failed to show student attendance",
+   "failed_to_get_class": "Failed to get the class data"
+}

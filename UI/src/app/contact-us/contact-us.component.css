@@ -1,0 +1,184 @@
+.custumer-care {
+  width: 100%;
+  margin-top: 70px;
+  background: url('../../assets/images/cc_img_02.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  height: 230px;
+}
+.border-complaint {
+  width: 20%;
+  height: 2px;
+  margin-top: 60px;
+  border-radius: 10px;
+  background: linear-gradient( to right, #a17cdc 0%, #e2cfef 100%);
+}
+
+.complaint-grievance-header {
+  text-align: center;
+  width: 100%;
+  /*padding: 10px;*/
+  /*background-color: #cccde8;*/
+}
+
+/*#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}*/
+
+.map {
+  padding-top: 20px;
+}
+
+.mapouter {
+  overflow: hidden;
+  height: 500px;
+  width: 600px;
+}
+
+
+/*.gmap_canvas {
+  background: none!important;
+  height: 500px;
+  width: 1200px;
+}*/
+
+#gmap_canvas img {
+  max-width: none!important;
+  background: none!important
+}
+
+
+/* form starting stylings ------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+input {
+  font-size: 18px;
+  padding: 5px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #272678;
+  background: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+
+
+
+/* LABEL ======================================= */
+
+label {
+  color: #aaaad6;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 0px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+
+
+
+
+/* active state */
+
+input:focus~label,
+input:valid~label {
+  top: -20px;
+  font-size: 14px;
+  /*color: #fff;*/
+}
+
+
+
+
+
+/* BOTTOM BARS ================================= */
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  /*background: #fff;*/
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+
+
+
+
+
+
+/* active state */
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+  width: 50%;
+}
+
+
+
+
+
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.border-right {
+  border-right: 2px solid #e0e2e6;
+}

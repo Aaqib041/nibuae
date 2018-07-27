@@ -1,0 +1,77 @@
+.about-nobel-container {
+  width: 100%;
+  margin-top: 70px;
+  background: url('../../assets/images/about_us_02.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*background-color: #8370ca;*/
+  text-align: center;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-size: 16px;
+  height: 475px;
+  color: #fff;
+}
+
+
+
+.border-service-solution {
+  width: 50%;
+  height: 1px;
+  border-radius: 10px;
+  background: linear-gradient( to right, #a17cdc 0%, #e2cfef 100%);
+}
+.two-box-first b {
+  font-size: 21px;
+  color: #a8b0bc;
+}
+.two-box-second b {
+  font-size: 21px;
+  color: #a8b0bc;
+}
+.two-box-second p {
+ text-align: justify;
+  color: #fff;
+}
+
+
+.two-box-first p {
+ text-align: justify;
+  color: #fff;
+}
+
+.about-noble {
+  text-align: justify;
+}
+
+.border-right {
+  border-right: 1px solid #e0e2e6;
+}
+
+.circle {
+  width: 110px;
+  height: 110px;
+  border: solid 1px #555;
+  background-color: #544747;
+  border-radius: 54px;
+  text-align: center;
+  margin-left: 75px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1px 1px 6px 2px #888686;
+}
+
+.circle-content {
+  text-align: justify;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  /*font-family: 'Raleway', sans-serif;*/
+}
+.two-box-first {
+   /*background: linear-gradient( to right, #6668bf 50%, #65597d 50%);*/
+   background: linear-gradient(118deg,#494a84 50%,#3a1563 0); 
+}
+.two-box-second {
+   /*background: linear-gradient( to right, #65597d 50%, #6668bf 50%);*/
+   background: linear-gradient(118deg,#3a1563 50%,#494a84 0);
+}
