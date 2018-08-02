@@ -2,6 +2,8 @@ pipeline {
     agent any
     tools {
         nodejs 'NodeJS 10.8.0' 
+        type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+        env.PATH = "${node}/bin:${env.PATH}"
     }
     stages {
         stage('Check Installations') {
