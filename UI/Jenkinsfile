@@ -1,21 +1,23 @@
 pipeline {
     agent any
     tools {
-        maven 'apache-maven-3.0.1' 
+        node 'node10.30' 
     }
     stages {
         stage('Check Installations') {
             steps {
-                sh 'mvn --version'
+                //sh 'mvn --version'
                 sh 'java -version'
                 sh 'git --version'
                 sh 'docker --version'
                 sh 'node --version'
+                sh 'npm --version'
+                
             }
         }
     stage('Build Maven Package'){
             steps{
-                sh 'mvn clean package'
+                sh 'npm install'
             }
         }
        
