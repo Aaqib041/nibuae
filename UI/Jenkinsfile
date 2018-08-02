@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        node 'node10.30' 
+        nodejs 'node10.30' 
     }
     stages {
         stage('Check Installations') {
