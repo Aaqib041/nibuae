@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'node10.30' 
+        nodejs 'NodeJS 10.8.0' 
     }
     stages {
         stage('Check Installations') {
@@ -10,8 +10,8 @@ pipeline {
                 sh 'java -version'
                 sh 'git --version'
                 sh 'docker --version'
-                sh 'node --version'
                 sh 'npm --version'
+                sh 'node --version'
                 
             }
         }
