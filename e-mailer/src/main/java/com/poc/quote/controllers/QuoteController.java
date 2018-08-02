@@ -1,11 +1,11 @@
 package com.poc.quote.controllers;
 
 import com.itextpdf.text.DocumentException;
-import com.poc.quote.dto.QuoteInfo;
 import com.poc.quote.enums.FileType;
 import com.poc.quote.services.QuoteSvc;
 
 import java.util.Map;
+
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class QuoteController {
   @Autowired
   private QuoteSvc quoteSvc;
 
-  @CrossOrigin(origins = "http://18.220.124.39:8080")
+  @CrossOrigin
   @PostMapping(value = "/send/{type}", consumes = MediaType.APPLICATION_JSON_VALUE,
       produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity postQuote(@PathVariable("type") FileType fileType,

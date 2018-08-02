@@ -45,6 +45,6 @@ export class AppService {
     let opts = new RequestOptions();
     opts.headers = headers;
 
-    return this.http.post('http://18.220.124.39:8090/quote/send/PDF', userInfo, opts); 
+    return this.http.post('http://18.220.124.39:8080/quote/send/PDF', userInfo, opts); 
   }
 }

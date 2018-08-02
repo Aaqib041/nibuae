@@ -96,107 +96,6 @@ border-color:transparent;" class="dropdown " data-toggle="dropdown"><a class="dr
     </div>
   </div>
 </nav>
-<!-- <div id="enquiryModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" #closeBtn>&times;</button>
-        <h4 class="modal-title">Enquiry Form</h4>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
-          </p>
-          <form [formGroup]='enquiryForm.getForm()' >
-            <div class="col-md-3 col-sm-4 col-xs-6 form-line">
-               <div class="form-group radio-button-section">
-                <p style="margin: auto;font-weight: bold">
-                  <label class="radio-inline">
-                    <input type="radio" class="form-control" name="optradio" value="corporate" formControlName='optradio' (click)="corporate()">Corporate
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" class="form-control" name="optradio" value="individual" formControlName='optradio' (click)="individual()">Individual
-                  </label>
-                </p>
-              </div>
-              <div class="form-group" *ngIf="addCorporateName">
-                <label>Corporate Name</label>
-                <input type="text" class="form-control"  formControlName='corporateName'>
-              </div>
-              
-              <div class="form-group">
-                <label>Information*</label>
-                <input type="text" class="form-control" id="" placeholder="" formControlName='information'>
-                  <div *ngIf="enquiryForm.hasError('information')">
-                    <small class="text-danger">{{careerForm.getError('information')}}</small>
-                    </div>
-              </div> 
-              <div class="form-group">
-                <label>Enquiry*</label>
-                <input type="text" class="form-control" id="exampleInputEmail" formControlName='enquiry'>
-              </div>
-              <div class="form-group">
-                <label>Any Question</label>
-                <input type="text" class="form-control" id="anyQuestion" placeholder="" formControlName='anyQuestion'>
-                
-
-              </div>
-              <div class="form-group">
-                <label>Comments</label>
-                <input type="text" class="form-control" placeholder="" formControlName='comments'>
-              </div>
-              <div class="form-group">
-                <label>Suggestion</label>
-                <textarea class="form-control" id="description" rows="4" cols="28" placeholder="Enter Your Message" formControlName='suggestion'></textarea>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6">
-              <div class="form-group">
-                <label >Country</label>
-                <input type="text" class="form-control" placeholder=" " formControlName="country" >
-              </div>
-              <div class="form-group">
-                <label >Telephone*</label>
-                <input type="text" class="form-control"  placeholder="" formControlName='mobile' required>
-                   <div *ngIf="enquiryForm.hasError('mobile')">
-                    <small class="text-danger">{{enquiryForm.getError('mobile')}}</small>
-                    </div>
-              </div>
-              <div class="form-group">
-                <label >Fax</label>
-                <input type="text" class="form-control" id="telephone" placeholder="" formControlName='fax'>
-              </div>
-              <div class="form-group">
-                <label >Email*</label>
-                <input type="email" class="form-control" formControlName='email' placeholder="example@abc.com">
-                  <div *ngIf="enquiryForm.hasError('email')">
-                    <small class="text-danger">{{enquiryForm.getError('email')}}</small>
-                    </div>
-              </div>
-              <div class="form-group">
-                <label >City</label>
-                <input type="text" class="form-control" placeholder="" formControlName='city'>
-              </div>
-              <div>
-              </div>
-   <div class="form-group">
-   <re-captcha class="g-recaptcha" formControlName='captcha' (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"  ></re-captcha>
-    <div *ngIf="enquiryForm.hasError('email')">
-                    <small class="text-danger">{{enquiryForm.getError('captcha')}}</small>
-                    </div>
-   <br>
-    </div>
-              <button type="submit" class="btn btn-warning" (click)='send()'>Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
-              <button type="submit" class="btn btn-warning" (click)='reset()'>Cancel <span class="glyphicon glyphicon-remove"></span></button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div> -->
 
 
 <div id="enquiryModal" class="modal fade" role="dialog">
@@ -286,27 +185,21 @@ border-color:transparent;" class="dropdown " data-toggle="dropdown"><a class="dr
               </div>
               <div>
               </div>
-
-              <!--  <div class="row">
-   <div class="col-md-3"> -->
-   <!-- <div class="form-group"> -->
    <re-captcha class="g-recaptcha" formControlName='captcha' (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"  ></re-captcha>
     <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
                  && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Please select Captcha</small>
                 </div>
    <br>
-    <!-- </div> -->
+  
               <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
               <button type="submit" class="btn btn-warning" (click)='reset()'>Cancel <span class="glyphicon glyphicon-remove"></span></button>
-              <!--  </div>
-                </div> -->
+          
             </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
       </div>
     </div>
   </div>

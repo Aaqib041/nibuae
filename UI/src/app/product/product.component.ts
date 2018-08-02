@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
 import { TranslateService } from '@ngx-translate/core';
 import * as $ from 'jquery';
@@ -10,6 +10,7 @@ import { AppService } from '../app.service';
 import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
   declare var $:any;
+  import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product',
@@ -19,40 +20,90 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 })
 export class ProductComponent implements OnInit {
 
+  @ViewChild('closeBtn') closeBtn: ElementRef;
+  @ViewChild('indMedIns') indMedIns: ElementRef;
+
   isValidFormSubmitted = null;
   addCorporateName;
-  enquiryForm = new FormGroup({
+    enquiryForm = new FormGroup({
+    // corporateName: new FormControl('', [Validators.required]),
+    information: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
     mobile: new FormControl('', [Validators.required]),
+    enquiry: new FormControl('', [Validators.required]),
+    optradio: new FormControl('', [Validators.required]),
+    captcha: new FormControl('', [Validators.required]),
+    anyQuestion: new FormControl(),
+    comments: new FormControl(),
+    country: new FormControl(),
+    fax: new FormControl(),
+    city: new FormControl()
+  });
+
+    homeUmbrellaForm = new FormGroup({
+    mobile: new FormControl('', [Validators.required]),
     policyStartDate: new FormControl('', [Validators.required]),
-    country: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
+    country: new FormControl(),
+    dob: new FormControl('', [Validators.required]),
     region: new FormControl('', [Validators.required]),
     requiredCovers: new FormControl('', [Validators.required]),
-    concreteHome: new FormControl('', [Validators.required]),
-    houseHoldAccomadation: new FormControl('', [Validators.required]),
-    reclaimedLand: new FormControl('', [Validators.required]),
-    dob:  new FormControl('', [Validators.required]),
-    enquiry: new FormControl('', [Validators.required]),
+    concreteOption: new FormControl('', [Validators.required]),
+    accomadationOption: new FormControl(),
+    reclaimedLandOption: new FormControl(),
+    leavingHomeOption: new FormControl(),
+    insurerOption: new FormControl(),
     captcha: new FormControl('', [Validators.required])
+  });
+
+   boatCraftEnquiryForm = new FormGroup({
+      boatOwner :new FormControl('', [Validators.required]),
+      manufacturer :new FormControl('', [Validators.required]),
+      mobile: new FormControl('', [Validators.required]),
+      buildYear :new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
+      boatValue :new FormControl('', [Validators.required]),
+      nationality :new FormControl('', [Validators.required]),
+      purchasePrice :new FormControl('', [Validators.required]),
+      countryRegistration :new FormControl(),
+      boatSize :new FormControl(),
+      currentlyBoatInsr :new FormControl(),
+      engineHP :new FormControl(),
+      expiredDatePolicy :new FormControl(),
+      carriedPassenger: new FormControl(),
+      captcha : new FormControl('', [Validators.required])
+  });
+
+   motorEnquiryForm = new FormGroup({
+    mobile: new FormControl('', [Validators.required]),
+    certification : new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
+    manufacturer : new FormControl('', [Validators.required]),
+    nationality : new FormControl('', [Validators.required]),
+    dob : new FormControl('', [Validators.required]),
+    manufactureYear : new FormControl('', [Validators.required]),
+    initPurchaseRate : new FormControl('', [Validators.required]),
+    city : new FormControl('', [Validators.required]),
+    firstRegistration : new FormControl('', [Validators.required]),
+    firstLicenseCountry : new FormControl('', [Validators.required]),
+    insuranceDeclareVal : new FormControl('', [Validators.required]),
+    uaeDrivingLicense : new FormControl('', [Validators.required]),
+    policyStartDate : new FormControl('', [Validators.required]),
+    captcha : new FormControl('', [Validators.required])
+
 
   });
 
-
-  //  boatCraftEnquiryForm = new FormGroup({
-  //   email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
-  //   mobile: new FormControl('', [Validators.required]),
-  //   policyStartDate: new FormControl('', [Validators.required]),
-  //   country: new FormControl('', [Validators.required]),
-  //   region: new FormControl('', [Validators.required]),
-  //   requiredCovers: new FormControl('', [Validators.required]),
-  //   concreteHome: new FormControl('', [Validators.required]),
-  //   houseHoldAccomadation: new FormControl('', [Validators.required]),
-  //   reclaimedLand: new FormControl('', [Validators.required]),
-  //   dob:  new FormControl('', [Validators.required]),
-  //   enquiry: new FormControl('', [Validators.required]),
-  //   optradio: new FormControl('', [Validators.required])
-
-  // });
+  individualMedicalForm = new FormGroup({
+    mobile: new FormControl('', [Validators.required]),
+    policyStartDate: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
+    country: new FormControl(),
+    dob: new FormControl('', [Validators.required]),
+    areaCover : new FormControl(),
+    numberOfMembers : new FormControl(),
+    captcha: new FormControl('', [Validators.required])
+  });
 
   user = new User();
   personalAccCover;
@@ -204,6 +255,31 @@ export class ProductComponent implements OnInit {
 
   }
 
+  get corporateName() {
+    return this.enquiryForm.get('corporateName');
+  }
+  get information() {
+    return this.enquiryForm.get('information');
+  }
+   get anyQuestion() {
+    return this.enquiryForm.get('anyQuestion');
+  }
+
+   get comments() {
+    return this.enquiryForm.get('comments');
+  }
+
+   get fax() {
+    return this.enquiryForm.get('fax');
+  }
+
+    get city() {
+    return this.enquiryForm.get('city');
+  }
+  
+  get enquiry() {
+    return this.enquiryForm.get('enquiry');
+  }
 
   get email() {
     return this.enquiryForm.get('email');
@@ -214,6 +290,10 @@ export class ProductComponent implements OnInit {
   get country() {
     return this.enquiryForm.get('country');
   }
+
+
+
+
 
   get policyStartDate() {
     return this.enquiryForm.get('policyStartDate');
@@ -239,15 +319,49 @@ export class ProductComponent implements OnInit {
    get reclaimedLand() {
     return this.enquiryForm.get('reclaimedLand');
   }
-get captcha() {
+  get captcha() {
    return this.enquiryForm.get('catcha');
-}
+  }
+
+  get accomadationOption() {
+   return this.enquiryForm.get('accomadationOption');
+  }
+  get concreteOption() {
+   return this.enquiryForm.get('concreteOption');
+  }
+  get insurerOption() {
+   return this.enquiryForm.get('insurerOption');
+  }
+   get leavingHomeOption() {
+   return this.enquiryForm.get('leavingHomeOption');
+  }
+  get reclaimedLandOption() {
+   return this.enquiryForm.get('reclaimedLandOption');
+  }
+  get uaeDrivingLicense() {
+    return this.motorEnquiryForm.get('uaeDrivingLicense');    
+  }
+  get areaCover() {
+    return this.individualMedicalForm.get('areaCover');
+  }
+  get numberOfMembers() {
+    return this.individualMedicalForm.get('numberOfMembers');
+  }
   corporate() {
     this.addCorporateName = true;
   }
   individualName() {
     this.addCorporateName = false;
   }
+
+
+  private closeModal(): void {
+        this.closeBtn.nativeElement.click();
+    }
+
+    private closeIndMedIns() : void {
+      this.indMedIns.nativeElement.click();
+    }
 
  send(value, valid ){
     console.log("this.isValidFormSubmitted",value, valid);
@@ -257,21 +371,23 @@ get captcha() {
     }
     else {
     this.isValidFormSubmitted = true;
+    this.closeModal();
     this.user = this.enquiryForm.value;
-    $('#enquiryModal').modal('hide');
-
-    console.log("inside send", this.user);
-
-    this.userService.createUser(this.user);
-    console.log("inside nav send", this.user.optradio);
-    // this.spinnerService.show();
-    this.appService.sendInfoToMail(this.user).subscribe(
+     // this.spinnerService.show();
+    this.appService.sendInfoToMail(value).subscribe(
       res => {
+        console.log("res", res);
+        // this.spinnerService.hide();
+       Swal({
+  type: 'success',
+  title: 'Thanks ! Your form has been successfully sent',
+  showConfirmButton: true
+})
+
+       
         this.enquiryForm.reset();
         console.log(res);
         // this.spinnerService.hide();
-        this.toastr
-  .custom(' <div class="container" style=" height:200px;width:350px;"><div class="row" style=" height: 100px;width: 100px;border: 2px solid #3d7829;border-radius: 100px;text-align: center;margin-left:60px;margin-top:20px"><span class="fa fa-check fa-2x" style="color:#3d7829;margin-top:35px;"></span></div><br><b style="text-align:center;margin-left:75px;">Thank You !</b><br>Your form has been successfully sent!</div>', null, {enableHTML: true, toastLife: 30000});
       }, error => {
         console.log(error);
       });
@@ -279,10 +395,69 @@ get captcha() {
     // this.register.reset();
   }
 
-  closeModal() {
- this.isValidFormSubmitted =  true;
-  this.enquiryForm.reset();
-}
+  sendHomeUmbrellaForm(value, valid) {
+    console.log("inside send umbrella form", value);
+    if (valid === false) {
+      this.isValidFormSubmitted = false;
+      
+    }
+    else {
+    this.isValidFormSubmitted = true;
+    this.closeModal();
+    this.user = this.individualMedicalForm.value;
+
+
+    this.userService.createUser(this.user);
+     // this.spinnerService.show();
+    this.appService.sendInfoToMail(value).subscribe(
+      res => {
+        // this.spinnerService.hide();
+       Swal({
+  type: 'success',
+  title: 'Thanks ! Your form has been successfully sent',
+  showConfirmButton: true
+})
+        this.individualMedicalForm.reset();
+        console.log(res);
+        // this.spinnerService.hide();
+      }, error => {
+        console.log(error);
+      });
+  }
+    // this.register.reset();
+  }
+
+  sendMedInsForm(value, valid) {
+    console.log("inside send umbrella form", value, valid);
+    if (valid === false) {
+      this.isValidFormSubmitted = false;
+      
+    }
+    else {
+    this.isValidFormSubmitted = true;
+   this.closeIndMedIns();
+    this.user = this.enquiryForm.value;
+
+
+    this.userService.createUser(this.user);
+     // this.spinnerService.show();
+    this.appService.sendInfoToMail(value).subscribe(
+      res => {
+        // this.spinnerService.hide();
+       Swal({
+  type: 'success',
+  title: 'Thanks ! Your form has been successfully sent',
+  showConfirmButton: true
+})
+       this.individualMedicalForm.reset();
+        console.log(res);
+        // this.spinnerService.hide();
+      }, error => {
+        console.log(error);
+      });
+  }
+    // this.register.reset();
+  }
 
   reset() {
     // this.isSubmitted = false;

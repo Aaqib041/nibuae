@@ -31,9 +31,10 @@ export class NavbarComponent implements OnInit {
     optradio: new FormControl('', [Validators.required]),
     captcha: new FormControl('', [Validators.required]),
     anyQuestion: new FormControl(),
-    commnets: new FormControl(),
+    comments: new FormControl(),
     country: new FormControl(),
-    fax: new FormControl()
+    fax: new FormControl(),
+    city: new FormControl()
   });
 
 
@@ -152,15 +153,14 @@ send(value, valid ){
     else {
     this.isValidFormSubmitted = true;
     this.closeModal();
-    this.user = this.enquiryForm.value;
-    $('#enquiryModal').modal('hide');
+    // this.user = this.enquiryForm.value;
+    // $('#enquiryModal').modal('hide');
 
-    console.log("inside send", this.user);
+    // console.log("inside send", this.user);
 
-    this.userService.createUser(this.user);
-    console.log("inside nav send", this.user.optradio);
+    // this.userService.createUser(this.user);
      // this.spinnerService.show();
-    this.appService.sendInfoToMail(this.user).subscribe(
+    this.appService.sendInfoToMail(value).subscribe(
       res => {
         // this.spinnerService.hide();
        Swal({

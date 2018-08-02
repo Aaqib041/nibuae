@@ -2903,9 +2903,9 @@
           <div class="heading">
             <h1>Individual Life Insurance</h1>
           </div>
-          <div class="buttonClick">
+         <!--  <div class="buttonClick">
             <button class="btn btn-warning" aria-hidden="true" data-toggle="modal" data-target="#enquiryModal"> Get Quote</button>
-          </div>
+          </div> -->
         </div>
         <br>
         <div class="col-md-12">
@@ -3660,15 +3660,12 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" (click)="closeModal();">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" #closeBtn>&times;</button>
         <h4 class="modal-title">Enquiry Form</h4>
       </div>
       <div class="modal-body">
         <div class="container">
-         <!--  <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
-            Form submitted successfully.
-          </p> -->
-          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();'  novalidate>
+          <form [formGroup]='homeUmbrellaForm' (ngSubmit)='sendHomeUmbrellaForm(homeUmbrellaForm.value, homeUmbrellaForm.valid);enquiryForm.reset();'  novalidate>
             <div class="col-md-3 col-sm-4 col-xs-6 form-line">
               <div class="form-group">
                 <label>Contact Number*</label>
@@ -3680,7 +3677,7 @@
               </div>
               <div class="form-group">
                 <label>Policy Start Date*</label>
-                <input type="text" class="form-control" id="exampleInputEmail" formControlName='policyStartDate'>
+                <input type="date" class="form-control" id="exampleInputEmail" formControlName='policyStartDate'>
                 <div *ngIf="policyStartDate?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Please fill policy start date.</small>
                 </div>
@@ -3715,7 +3712,7 @@
               </div>
               <div class="form-group">
                 <label>Date Of Birth*</label>
-                <input type="text" class="form-control" formControlName='dob' placeholder="">
+                <input type="date" class="form-control" formControlName='dob' placeholder="">
                 <div *ngIf="dob?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Please enter your DOB.</small>
                 </div>
@@ -3741,16 +3738,16 @@
                 <label for="description">Required Covers*</label>
                 <br>
                 <label class="checkbox-inline">
-                  <input type="checkbox" formControlName='requiredCovers' value="">Building
+                  <input type="checkbox" formControlName='requiredCovers' value="building">Building
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" formControlName='requiredCovers' value="">Contents
+                  <input type="checkbox" formControlName='requiredCovers' value="contents">Contents
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" formControlName='requiredCovers' value="">Personal Possessions
+                  <input type="checkbox" formControlName='requiredCovers' value="personal">Personal Possessions
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" formControlName='requiredCovers' value="">Domestic Covers
+                  <input type="checkbox" formControlName='requiredCovers' value="domestic">Domestic Covers
                 </label>
                 <div *ngIf="requiredCovers?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Please select your region.</small>
@@ -3764,9 +3761,9 @@
                 <label for="description">Is your home built of concrete?*</label>
                 <br>
                 <label class="radio-inline">
-                  <input type="radio" name="buitWithConcrete">Yes</label>
+                  <input type="radio" value="yes" formControlName="concreteOption">Yes</label>
                 <label class="radio-inline">
-                  <input type="radio" name="buitWithConcrete">No</label>
+                  <input type="radio" value="no" formControlName="concreteOption">No</label>
                 <div *ngIf="concreteHome?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Select yes/no.</small>
                 </div>
@@ -3775,9 +3772,9 @@
                 <label for="description">Is your home used solely as a private living accommodation for your household?*</label>
                 <br>
                 <label class="radio-inline">
-                  <input type="radio" name="livingAccomadation">Yes</label>
+                  <input type="radio" value="yes" formControlName="accomadationOption">Yes</label>
                 <label class="radio-inline">
-                  <input type="radio" name="livingAccomadation">No</label>
+                  <input type="radio" value="no" formControlName="accomadationOption">No</label>
                 <div *ngIf="houseHoldAccomadation?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Select yes/no.</small>
                 </div>
@@ -3787,9 +3784,9 @@
                 <label for="description">Has your home been built on reclaimed land?*</label>
                 <br>
                 <label class="radio-inline">
-                  <input type="radio" name="reclaimedLand">Yes</label>
+                  <input type="radio"  value="yes" formControlName="reclaimedLandOption">Yes</label>
                 <label class="radio-inline">
-                  <input type="radio" name="reclaimedLand">No</label>
+                  <input type="radio"  value="no" formControlName="reclaimedLandOption">No</label>
                 <div *ngIf="reclaimedLand?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Select yes/no.</small>
                 </div>
@@ -3798,25 +3795,25 @@
                 <label for="description">Do you ever leave your home unattended for more than 60 consecutive days? </label>
                 <br>
                 <label class="radio-inline">
-                  <input type="radio" name="leavingHome">Yes</label>
+                  <input type="radio" value="yes" formControlName="leavingHomeOption">Yes</label>
 
                 <label class="radio-inline">
-                  <input type="radio" name="leavingHome">No</label>
+                  <input type="radio" value="no" formControlName="leavingHomeOption">No</label>
               </div>
               <div class="form-group">
                 <label for="description">Has any insurer declined/cancelled/imposed special terms or conditions on you in the past? *</label>
                 <br>
                 <label class="radio-inline">
-                  <input type="radio" name="insurerradio">Yes</label>
+                  <input type="radio"  value="yes" formControlName="insurerOption">Yes</label>
 
                 <label class="radio-inline">
-                  <input type="radio" name="insurerradio">No</label>
+                  <input type="radio"  value="no" formControlName="insurerOption">No</label>
 
                 <div>
                 </div>
 
                 <div class="form-group">
-                  <re-captcha class="" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+                  <re-captcha class="" formControlName="captcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
                    <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
                  && !isValidFormSubmitted" [ngClass]="'error'">
                   <small class="text-danger">Please select Captcha</small>
@@ -3847,7 +3844,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" #closeBtn>&times;</button>
         <h4 class="modal-title">Enquiry Form</h4>
       </div>
       <div class="modal-body">
@@ -3855,23 +3852,23 @@
          <!--  <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
             Form submitted successfully.
           </p> -->
-          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();' novalidate>
+          <form [formGroup]='boatCraftEnquiryForm' (ngSubmit)='send(boatCraftEnquiryForm.value, boatCraftEnquiryForm.valid);boatCraftEnquiryForm.reset();' novalidate>
             <div class="col-md-3 col-sm-4 col-xs-6 form-line">
               <div class="form-group">
                 <label>Owner of Boat*</label>
-                <input type="text" class="form-control" id="" placeholder="">
+                <input type="text" class="form-control" id="" placeholder="" formControlName="boatOwner">
               </div>
               <div class="form-group">
                 <label>Manufacturer Name*</label>
-                <input type="text" class="form-control" id="exampleInputEmail">
+                <input type="text" class="form-control" id="exampleInputEmail" formControlName="manufacturer">
               </div>
               <div class="form-group">
                 <label>Contact Number*</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="text" class="form-control" id="telephone" placeholder="" formControlName="mobile">
               </div>
               <div class="form-group">
                 <label>Year of Built *</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="date" class="form-control" id="telephone" placeholder="" formControlName="buildYear">
               </div>
               <div class="form-group">
                 <label for="description">Email*</label>
@@ -3886,11 +3883,11 @@
               </div>
               <div class="form-group">
                 <label for="description">Value of the Boat *</label>
-                <input type="text" class="form-control" placeholder=" ">
+                <input type="text" class="form-control" placeholder=" " formControlName="boatValue">
               </div>
               <div class="form-group">
                 <label>Nationality of Owner</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="nationality">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="UAE">United Arab Emirates</option>
                   <option value="Bahrain">Bahrain</option>
@@ -3904,7 +3901,7 @@
               </div>
               <div class="form-group">
                 <label for="description">Purchase Price</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="text" class="form-control" id="telephone" placeholder="" formControlName="purchasePrice">
               </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6">
@@ -3913,41 +3910,45 @@
 
               <div class="form-group">
                 <label for="description">Country of Registration</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" placeholder="" formControlName="countryRegistration">
               </div>
               <div class="form-group">
                 <label for="description">Size of Boat</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" placeholder="" formControlName="boatSize">
               </div>
               <div class="form-group">
                 <label for="description">Is the Boat currently Insured</label>
                 <br>
                 <label class="radio-inline">
-                  <input type="radio" name="optradio">Yes</label>
+                  <input type="radio" value="yes" formControlName="currentlyBoatInsr">Yes</label>
 
                 <label class="radio-inline">
-                  <input type="radio" name="optradio">No</label>
+                  <input type="radio"  value="no" formControlName="currentlyBoatInsr">No</label>
               </div>
 
               <div class="form-group">
                 <label for="description">HP of Engine</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="text" class="form-control" id="telephone" placeholder="" formControlName="engineHP">
               </div>
 
               <div class="form-group">
                 <label for="description">Expiry date of current policy</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="date" class="form-control" id="telephone" placeholder="" formControlName="expiredDatePolicy">
               </div>
               <div class="form-group">
                 <label for="description">No. of passengers being carried on board</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="text" class="form-control" id="telephone" placeholder="" formControlName="carriedPassenger">
               </div>
               <div>
               </div>
 
 
                  <div class="form-group">
-                  <re-captcha class="" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+                  <re-captcha class="" formControlName="captcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+                   <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please select Captcha</small>
+                </div>
                 </div>
                 <button type="submit" class="btn btn-form" >Send
                   <span class="glyphicon glyphicon-send"></span>
@@ -3982,15 +3983,15 @@
      <!--      <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
             Form submitted successfully.
           </p> -->
-          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();'  novalidate>
+          <form [formGroup]='motorEnquiryForm' (ngSubmit)='send(motorEnquiryForm.value, motorEnquiryForm.valid);motorEnquiryForm.reset();'  novalidate>
             <div class="col-md-3 col-sm-4 col-xs-6 form-line">
               <div class="form-group">
                 <label>Contact Number*</label>
-                <input type="text" class="form-control" id="" placeholder="">
+                <input type="text" class="form-control" id="" placeholder="" formControlName="mobile">
               </div>
               <div class="form-group">
                 <label>Do you have a No Claim Certificate (NCD)? *</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="certification">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="0year">No, I have no certificate</option>
                   <option value="1year">Yes, I have an NCD for 1 year</option>
@@ -4003,13 +4004,20 @@
               </div>
               <div class="form-group">
                 <label>Email *</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="text" class="form-control"  placeholder="" formControlName="email">
+                  <div *ngIf="email?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Email is required.</small>
+                </div>
+
+                <div *ngIf="email?.errors?.pattern && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+                  Please enter valid email.
+                </div>
               </div>
 
 
               <div class="form-group">
                 <label>Manufacturer name *</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="manufacturer">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="alfa rameo">Alfa Romeo</option>
                   <option value="aston martin">Aston martin</option>
@@ -4019,7 +4027,7 @@
               </div>
               <div class="form-group">
                 <label>Nationality of Driver *</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="nationality">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="emirati">Emirati</option>
                   <option value="afghan">Afghan</option>
@@ -4030,11 +4038,11 @@
               </div>
               <div class="form-group">
                 <label for="description">Date of Birth of Driver</label>
-                <input type="text" class="form-control" placeholder=" ">
+                <input type="date" class="form-control" placeholder=" "  formControlName="dob">
               </div>
               <div class="form-group">
                 <label>Manufacture Year*</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="manufactureYear">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="2018">2018</option>
                   <option value="2017">2017</option>
@@ -4045,7 +4053,7 @@
 
               <div class="form-group">
                 <label for="description">Initial Purchase Price (SAR) *</label>
-                <input type="text" class="form-control" placeholder=" ">
+                <input type="text" class="form-control" placeholder=" " formControlName="initPurchaseRate">
               </div>
 
             </div>
@@ -4053,7 +4061,7 @@
 
               <div class="form-group">
                 <label>City/Region *</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="city">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="abudhabi">Abu Dhabi</option>
                   <option value="Dubai">Dubai</option>
@@ -4063,12 +4071,12 @@
               </div>
               <div class="form-group">
                 <label for="description">First Registration *</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="text" class="form-control" placeholder="" formControlName="firstRegistration">
               </div>
 
               <div class="form-group">
                 <label>Transferable License or First License Country *</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="firstLicenseCountry">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="2018">2018</option>
                   <option value="2017">2017</option>
@@ -4078,12 +4086,12 @@
               </div>
               <div class="form-group">
                 <label for="description">Value Declared For Insurance(SAR)</label>
-                <input type="email" name="" class="form-control" formControlName='email' placeholder="example@abc.com">
+                <input type="email" name="" class="form-control" formControlName='insuranceDeclareVal' placeholder="example@abc.com">
               </div>
 
               <div class="form-group">
                 <label>UAE Driving Experience*</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName="uaeDrivingLicense">
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="2018">2018</option>
                   <option value="2017">2017</option>
@@ -4093,13 +4101,17 @@
               </div>
               <div class="form-group">
                 <label for="description">Policy Start</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="date" class="form-control" placeholder="" formControlName="policyStartDate">
               </div>
               <div>
               </div>
 
               <div class="form-group">
-                <re-captcha class="" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+                <re-captcha class="" formControlName="captcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+                   <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please select Captcha</small>
+                </div>
               </div>
               <button type="submit" class="btn btn-form" >Send
                 <span class="glyphicon glyphicon-send"></span>
@@ -4126,7 +4138,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" #indMedIns>&times;</button>
         <h4 class="modal-title">Enquiry Form</h4>
       </div>
       <div class="modal-body">
@@ -4134,15 +4146,15 @@
          <!--  <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
             Form submitted successfully.
           </p> -->
-          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();'  novalidate>
+          <form [formGroup]='individualMedicalForm' (ngSubmit)='sendMedInsForm(individualMedicalForm.value, individualMedicalForm.valid);individualMedicalForm.reset();'  novalidate>
             <div class="col-md-3 col-sm-4 col-xs-6 form-line">
               <div class="form-group">
                 <label>Contact Number*</label>
-                <input type="text" class="form-control" id="" placeholder="">
+                <input type="text" class="form-control" id="" placeholder="" formControlName="mobile">
               </div>
               <div class="form-group">
                 <label>Policy Start Date*</label>
-                <input type="text" class="form-control" id="exampleInputEmail" formControlName='policyStartDate'>
+                <input type="date" class="form-control" id="exampleInputEmail" formControlName='policyStartDate'>
               </div>
               <div class="form-group">
                 <label for="description">Email</label>
@@ -4158,7 +4170,7 @@
               <div class="form-group">
 
                 <label>Country of Residence *</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName='country'>
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="UAE">United Arab Emirates</option>
                   <option value="Bahrain">Bahrain</option>
@@ -4172,11 +4184,11 @@
               </div>
               <div class="form-group">
                 <label>Date of Birth</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="date" class="form-control" id="telephone" placeholder="" formControlName='dob'>
               </div>
               <div class="form-group">
                 <label>Area of Cover</label>
-                <select id="select" class="btn-white  form-control" style="cursor: pointer;">
+                <select id="select" class="btn-white  form-control" style="cursor: pointer;" formControlName='areaCover'>
                   <option style="color:gray" value="null" selected data-default disabled>-select-</option>
                   <option value="UAE">UAE only</option>
                   <option value="IndianSubCont">Indian Sub-contient,</option>
@@ -4191,7 +4203,7 @@
               <div class="form-group">
                 <label>No. of members *</label>
 
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" placeholder="" formControlName='numberOfMembers'>
               </div>
               <div class="form-group">
                 <label for="description">Select Covers (if required) *</label>
@@ -4208,7 +4220,11 @@
               </div>
 
               <div class="form-group">
-                <re-captcha class="" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+               <re-captcha class="" formControlName="captcha" (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"></re-captcha>
+                   <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please select Captcha</small>
+                </div>
               </div>
               <button type="submit" class="btn btn-form" >Send
                 <span class="glyphicon glyphicon-send"></span>
@@ -4233,9 +4249,8 @@
 
 <!-- individual life insurance  Modal -->
 
-<div id="individualLifeInsuranceEnquiryModal" class="modal fade" role="dialog">
+<!-- <div id="individualLifeInsuranceEnquiryModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -4243,10 +4258,7 @@
       </div>
       <div class="modal-body">
         <div class="container">
-       <!--    <p *ngIf="isValidFormSubmitted && enquiryForm.pristine" [ngClass]="'success'">
-            Form submitted successfully.
-          </p> -->
-          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();'  novalidate>
+          <form [formGroup]='individualLifeInsuranceEnquiryForm' (ngSubmit)='send(individualLifeInsuranceEnquiryForm.value, individualLifeInsuranceEnquiryForm.valid);individualLifeInsuranceEnquiryForm.reset();'  novalidate>
             <div class="col-md-3 col-sm-4 col-xs-6 form-line">
               <div class="form-group">
                 <label>Name*</label>
@@ -4269,7 +4281,7 @@
               <div class="form-group">
 
                 <label>Date of Birth*</label>
-                <input type="text" class="form-control" id="telephone" placeholder="">
+                <input type="date" class="form-control" id="telephone" placeholder="">
               </div>
               <div class="form-group">
                 <label>Contact Number</label>
@@ -4344,7 +4356,7 @@
   </div>
 </div>
 
-
+ -->
 
 
 <div id="enquiryModal" class="modal fade" role="dialog">
@@ -4352,92 +4364,98 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" (click)="closeModal();">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" #closeBtn>&times;</button>
         <h4 class="modal-title">Enquiry Form</h4>
       </div>
       <div class="modal-body">
         <div class="container">
-             <form [formGroup]='enquiryForm.getForm()' >
+          <form [formGroup]='enquiryForm' (ngSubmit)='send(enquiryForm.value, enquiryForm.valid);enquiryForm.reset();' novalidate>
             <div class="col-md-3 col-sm-4 col-xs-6 form-line">
-               <div class="form-group radio-button-section">
+              <div class="form-group radio-button-section">
                 <p style="margin: auto;font-weight: bold">
                   <label class="radio-inline">
-                    <input type="radio" class="form-control" name="optradio" value="corporate" formControlName='optradio' (click)="corporate()">Corporate
+                    <input type="radio" class="form-control"  value="corporate" formControlName='optradio' (click)="corporate()">Corporate
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" class="form-control" name="optradio" value="individual" formControlName='optradio' (click)="individual()">Individual
+                    <input type="radio" class="form-control"  value="individual" formControlName='optradio' (click)="individualName()">Individual
                   </label>
                 </p>
               </div>
               <div class="form-group" *ngIf="addCorporateName">
                 <label>Corporate Name</label>
-                <input type="text" class="form-control"  formControlName='corporateName'>
+                <input type="text" class="form-control" id="" placeholder="" formControlName='corporateName'>
               </div>
               
               <div class="form-group">
                 <label>Information*</label>
                 <input type="text" class="form-control" id="" placeholder="" formControlName='information'>
-                  <div *ngIf="enquiryForm.hasError('information')">
-                    <small class="text-danger">{{careerForm.getError('information')}}</small>
-                    </div>
-              </div> 
+                  <div *ngIf="information?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Information is required.</small>
+                </div>
+              </div>
               <div class="form-group">
                 <label>Enquiry*</label>
                 <input type="text" class="form-control" id="exampleInputEmail" formControlName='enquiry'>
+                <div *ngIf="enquiry?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please add your enquiry </small>
+                </div>
               </div>
               <div class="form-group">
                 <label>Any Question</label>
-                <input type="text" class="form-control" id="anyQuestion" placeholder="" formControlName='anyQuestion'>
-                
-
+                <input type="text" class="form-control"  formControlName='anyQuestion'>
               </div>
               <div class="form-group">
                 <label>Comments</label>
-                <input type="text" class="form-control" placeholder="" formControlName='comments'>
+                <input type="text" class="form-control"   formControlName='comments'>
               </div>
               <div class="form-group">
                 <label>Suggestion</label>
-                <textarea class="form-control" id="description" rows="4" cols="28" placeholder="Enter Your Message" formControlName='suggestion'></textarea>
+                <textarea class="form-control" id="description" rows="4" cols="28" placeholder="Enter Your Message"></textarea>
               </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6">
               <div class="form-group">
-                <label >Country</label>
-                <input type="text" class="form-control" placeholder=" " formControlName="country" >
+                <label for="description">Country</label>
+                <input type="text" class="form-control"  formControlName='country'>
               </div>
               <div class="form-group">
-                <label >Telephone*</label>
-                <input type="text" class="form-control"  placeholder="" formControlName='mobile' required>
-                   <div *ngIf="enquiryForm.hasError('mobile')">
-                    <small class="text-danger">{{enquiryForm.getError('mobile')}}</small>
-                    </div>
+                <label for="description">Telephone*</label>
+                <input type="text" class="form-control"  formControlName='mobile'>
+                <div *ngIf="mobile?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Mobile No is required.</small>
+                </div>
               </div>
               <div class="form-group">
-                <label >Fax</label>
-                <input type="text" class="form-control" id="telephone" placeholder="" formControlName='fax'>
+                <label for="description">Fax</label>
+                <input type="text" class="form-control"  formControlName='fax'>
               </div>
               <div class="form-group">
-                <label >Email*</label>
-                <input type="email" class="form-control" formControlName='email' placeholder="example@abc.com">
-                  <div *ngIf="enquiryForm.hasError('email')">
-                    <small class="text-danger">{{enquiryForm.getError('email')}}</small>
-                    </div>
+                <label for="description">Email*</label>
+                <input type="email" name="email" class="form-control" formControlName='email' placeholder="example@abc.com">
+                <div *ngIf="email?.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Email is required.</small>
+                </div>
+                <div *ngIf="email?.errors?.pattern && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'" class="text-danger">
+                  Please enter valid email.
+                </div>
               </div>
               <div class="form-group">
-                <label >City</label>
+                <label for="description">City</label>
                 <input type="text" class="form-control" placeholder="" formControlName='city'>
               </div>
               <div>
               </div>
-   <div class="form-group">
    <re-captcha class="g-recaptcha" formControlName='captcha' (resolved)="resolved($event)" siteKey="6LfrSU8UAAAAAM1gH501zKdLcGZgOT3u1hjDa7wx"  ></re-captcha>
-    <div *ngIf="enquiryForm.hasError('email')">
-                    <small class="text-danger">{{enquiryForm.getError('captcha')}}</small>
-                    </div>
+    <div *ngIf="captcha?.errors?.required && isValidFormSubmitted != null
+                 && !isValidFormSubmitted" [ngClass]="'error'">
+                  <small class="text-danger">Please select Captcha</small>
+                </div>
    <br>
-    </div>
-              <button type="submit" class="btn btn-warning" (click)='send()'>Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
+  
+              <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button> &nbsp;&nbsp;&nbsp;
               <button type="submit" class="btn btn-warning" (click)='reset()'>Cancel <span class="glyphicon glyphicon-remove"></span></button>
+          
             </div>
           </form>
         </div>

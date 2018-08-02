@@ -645,15 +645,24 @@ label {
 .modal-dialog {
     width: 645px;
 }
+
 }
 
 @media (max-width: 768px) {
-    #sidebar {
+  /*  #sidebar {
         margin-left: -250px;
+    }*/
+
+    #sidebar {
+      z-index: 1;
     }
     #sidebar.active {
         margin-left: 0;
     }
+    .btn-warning {
+      margin-left: 192px;
+    }
+   
 }
 
 
@@ -664,6 +673,7 @@ label {
     min-width: 120px;
     max-width: 120px;
     min-height: 100vh;
+    z-index: 1;
 }
 
 }
